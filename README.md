@@ -26,7 +26,7 @@ To send an email, you need to have an gmail adress, without double authenticatio
 You need to let the programm run, without stop it, because, it check every hour to send the email with the work hours.
 
 ## Start-up
-To launch the game, do the command : `$ python3 app/mainGraphic.py` in the main directory.
+To launch the project, do the command : `$ python3 app/mainGraphic.py` in the main directory.
 
 
 ### home screen :
