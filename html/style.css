@@ -29,3 +29,13 @@ table {
 #worker {
     font-weight: bold;
 }
+
+#gauche { 
+    float: left;
+    width :50%
+}
+
+#droite { 
+    float: right;
+    width :50%
+}

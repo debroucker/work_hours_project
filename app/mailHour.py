@@ -19,10 +19,17 @@ def hoursDataBase(workerFile, hourFile, cssFile, show=True) :
     f.close()
     res += "<style>" + css + "</style>"
     res += "</head><body>"
+    #show columns
+    num_col = 0
+    number_of_columns = 2
+    cols = ['gauche', 'droite']
     for l in lines :
         line = l.split(";")
         name = line[0]
         firstName = line[1]
+        #show columns
+        res += "<div id='" + cols[num_col%number_of_columns] + "'>"
+        num_col += 1
         res += "<p id='worker'>" + name + " " + firstName + "</p><table><tbody><tr><td id='date'>Date</td><td id='hour'>Nombre d'heure</td><td id='mg'>MG</td></tr>"
         sumHour = 0
         sumMG = 0
@@ -43,6 +50,7 @@ def hoursDataBase(workerFile, hourFile, cssFile, show=True) :
                 None
         res += "<tr><td>Totaux</td><td>" + str(sumHour) + "</td><td>" + str(sumMG) + "</td></tr>"
         res += "</tbody></table>"
+        res += "</div>" #show columns
     res += "</body></html>"
     gl.writeInFile(hourFile, res)
     if show :

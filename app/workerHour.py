@@ -123,11 +123,11 @@ def addWorkerDataBase(workerName, workerFirstName, workerArrivingTime, workerDep
                     return "errorSameDate" #already work hours added for this day.
             else : 
                 res += l
-            genLib.writeInFile(fileWorkerHourPath, res)
-            if add :
-                return "okAddHour"
-            else :
-                return "add"
+        genLib.writeInFile(fileWorkerHourPath, res)
+        if add :
+            return "okAddHour"
+        else :
+            return "add"
     except :
         return checkParams(workerName, workerFirstName, workerArrivingTime, workerDepartureTime, workerMeal, fileWorkerHourPath)
 
